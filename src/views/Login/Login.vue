@@ -10,15 +10,20 @@
           <span>登录</span>
         </div>
         <div class="form">
+
           <el-form ref="form" :model="form" label-width="80px">
             <el-form-item label="账号:">
-              <el-input v-model="form.account"></el-input>
+              <svg-icon name="login-user" width="16" height="16" ></svg-icon>
+              <el-input v-model="form.account">
+              </el-input>
             </el-form-item>
             <el-form-item label="密码:">
-              <el-input v-model="form.password" type="password"></el-input>
+              <svg-icon name="password" width="16" height="16" ></svg-icon>
+              <el-input v-model="form.password" type="password">
+              </el-input>
             </el-form-item>
             <div class="textLink">
-              <el-link type="primary">忘记密码？</el-link>
+              <el-link type="primary">忘记密码?</el-link>
               <el-link type="primary">记住密码</el-link>
             </div>
 
@@ -36,6 +41,7 @@
 </template>
 
 <script>
+
 export default {
   name: "Login",
   data() {
