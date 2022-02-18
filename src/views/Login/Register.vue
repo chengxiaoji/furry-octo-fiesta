@@ -3,33 +3,54 @@
     <div class="loginBox">
       <el-card class="box-card">
         <div slot="header" class="clearfix">
-          <span>用户登录</span>
+          <span>用户注册</span>
         </div>
         <div class="form">
 
           <el-form ref="form" :model="form" label-width="80px">
-            <el-form-item label="账号:">
+            <el-form-item label="Email:">
               <div class="icon">
                 <svg-icon name="login-user" width="16" height="16"></svg-icon>
               </div>
-              <el-input v-model="form.account" placeholder="学号/工号/Email">
+              <el-input v-model="form.account" placeholder="请输入要激活的邮箱">
+              </el-input>
+            </el-form-item>
+            <el-form-item label="学校:">
+              <div class="icon">
+                <svg-icon name="login-user" width="16" height="16"></svg-icon>
+              </div>
+              <el-input v-model="form.account" placeholder="请输入您所在的学校名">
+              </el-input>
+            </el-form-item>
+            <el-form-item label="学号/工号:">
+              <div class="icon">
+                <svg-icon name="login-user" width="16" height="16"></svg-icon>
+              </div>
+              <el-input v-model="form.account" placeholder="学号/工号">
+              </el-input>
+            </el-form-item>
+            <el-form-item label="身份:">
+              <div class="icon">
+                <svg-icon name="login-user" width="16" height="16"></svg-icon>
+              </div>
+              <el-input v-model="form.account" placeholder="学号/工号">
               </el-input>
             </el-form-item>
             <el-form-item label="密码:">
               <div class="icon">
                 <svg-icon name="password" width="16" height="16"></svg-icon>
               </div>
-              <el-input v-model="form.password" type="password" placeholder="请输入登录密码">
+              <el-input v-model="form.password" type="password" placeholder="6-20位的字母、数字或特殊符号">
               </el-input>
             </el-form-item>
-            <div class="textLink">
+            <!-- <div class="textLink">
               <el-link type="primary">忘记密码?</el-link>
               <el-checkbox v-model="remember">下次自动登录</el-checkbox>
-            </div>
+            </div> -->
 
             <div class="loginBtn">
-              <el-button class="btn" style="width: 24rem; " type="primary" @click="onSubmit">登 录</el-button>
-              <el-button class="btn" style="width: 24rem; margin-top:2rem" @click="toRegister">立 即 注 册</el-button>
+              <el-button class="btn" style="width: 24rem; " type="primary" @click="onSubmit">创建账户</el-button>
+              <el-button class="btn" style="width: 24rem; margin-top:2rem" @click="toLogin">已有账号, 立即登录</el-button>
             </div>
           </el-form>
         </div>
@@ -60,8 +81,8 @@
       onSubmit() {
         console.log("submit!")
       },
-      toRegister() {
-        this.$router.push('register')
+      toLogin() {
+        this.$router.push('login')
       }
     },
   };
@@ -82,7 +103,7 @@
     display: flex;
     justify-content: center;
     width: fit-content;
-    height: 500px;
+    // height: 500px;
   }
 
   .loginBtn {

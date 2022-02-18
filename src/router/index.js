@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  // 登录
   {
     path:'/login',
     name:'login',
@@ -16,6 +17,12 @@ const routes = [
     redirect:'login',
     name: 'login',
     component: ()=> import('@/views/Login/Login')
+  },
+  // 注册组件
+  {
+    path:'/register',
+    name:'register',
+    component: ()=> import('@/views/Login/Register')
   },
   // home组件
   {
